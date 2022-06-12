@@ -30,12 +30,26 @@ screen_object.listen()
 screen_object.onkey(user1_paddle.movePaddleUp,"Up")
 screen_object.onkey(user1_paddle.movePaddleDown,"Down")
 screen_object.onkey(user2_paddle.movePaddleUp,"w")
-screen_object.onkey(user1_paddle.movePaddleDown,"s")
+screen_object.onkey(user2_paddle.movePaddleDown,"s")
 
 
 game_on = True
 while game_on:
     screen_object.update()
+    time.sleep(0.1)
+    
+    ball.moveBall()
+    if abs(ball.ycor()) > 280:
+        ball.bounce()
+    
+    if ball.distance(user1_paddle) < 50 and ball.xcor() > 320:
+        ball.collision()
+
+    elif ball.distance(user2_paddle) < 50 and ball.xcor() < -320:
+        ball.collision()
+
+    
+
 
 
 
