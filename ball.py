@@ -2,7 +2,8 @@ from turtle import Turtle
 import random
 
 directionsx = [-1,1]
-directionsy = [-1,0,1]
+directionsy = [0]
+updatey = [-10, -5, 5, 10]
 
 class Ball(Turtle):
     def __init__(self):
@@ -29,8 +30,20 @@ class Ball(Turtle):
         y = self.ycor() + self.move_y
         self.goto(x,y)
 
-    def bounce(self):
+    def reverty(self):
         self.move_y *= -1
 
-    def collision(self):
+    def revertx(self):
         self.move_x *= -1
+
+    def reball(self):
+        self.home()
+
+    def checky(self):
+        if self.move_y == 0:
+            return True
+        else:
+            return False
+    
+    def update(self):
+        self.move_y += random.choice(updatey)
