@@ -32,7 +32,7 @@ class Scoreboard(Turtle):
     def announcement(self):
         if self.user1_score == 5:
             self.goto(0,0)
-            self.write(f"Game is over. Winner is {self.user1_score}", move=False, align="center", font=("Courier", 20, "normal"))
+            self.write("Game is over. Winner is right paddle.", move=False, align="center", font=("Courier", 20, "normal"))
         if self.user2_score == 5:
             self.goto(0,0)
-            self.write(f"Game is over. Winner is {self.user2_score}", move=False, align="center", font=("Courier", 20, "normal"))
+            self.write("Game is over. Winner is left paddle.", move=False, align="center", font=("Courier", 20, "normal"))

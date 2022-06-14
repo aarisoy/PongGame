@@ -41,23 +41,23 @@ screen_object.onkeypress(user2_paddle.movePaddleDown,"s")
 game_on = True
 while game_on:
     screen_object.update()
-    time.sleep(0.05)
+    time.sleep(0.04)
     
     ball.moveBall()
     if abs(ball.ycor()) > 280:
         ball.reverty()
     
-    if ball.distance(user1_paddle) < 50 and ball.xcor() > 320:
+    if ball.distance(user1_paddle) < 55 and ball.xcor() > 340:
         ball.revertx()
         if ball.checky() == True:
             ball.update()
 
-    elif ball.distance(user2_paddle) < 50 and ball.xcor() < -320:
+    elif ball.distance(user2_paddle) < 55 and ball.xcor() < -340:
         ball.revertx()
         if ball.checky() == True:
             ball.update()
     
-    elif abs(ball.xcor()) > 380:
+    elif abs(ball.xcor()) > 340:
         scoreboard.hit(ball.xcor())
         ball.reball()
         ball.revertx()
